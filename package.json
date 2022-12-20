@@ -17,8 +17,7 @@
     "deps/**"
   ],
   "dependencies": {
-    "bindings": "^1.5.0",
-    "prebuild-install": "^7.1.0"
+    "node-gyp-build": "^4.5.0"
   },
   "devDependencies": {
     "chai": "^4.3.6",
@@ -32,31 +31,8 @@
     "sqlite3": "^5.0.8",
     "@types/better-sqlite3": "latest"
   },
-  "overrides": {
-    "prebuild": {
-      "node-gyp": "$node-gyp"
-    }
-  },
   "scripts": {
-    "install": "prebuild-install || node-gyp rebuild --release",
-    "build-release": "node-gyp rebuild --release",
-    "build-debug": "node-gyp rebuild --debug",
-    "rebuild-release": "npm run lzz && npm run build-release",
-    "rebuild-debug": "npm run lzz && npm run build-debug",
-    "test": "mocha --exit --slow=75 --timeout=30000",
-    "benchmark": "node benchmark",
-    "download": "bash ./deps/download.sh",
-    "setup": "powershell ./deps/setup.ps1",
-    "lzz": "lzz -hx hpp -sx cpp -k BETTER_SQLITE3 -d -hl -sl -e ./src/better_sqlite3.lzz",
-    "bump:patch": "npm --no-git-tag-version version patch",
-    "bump:minor": "npm --no-git-tag-version version minor",
-    "bump:major": "npm --no-git-tag-version version major",
-    "bump:patch:beta": "npm --no-git-tag-version --preid=beta version prepatch",
-    "bump:minor:beta": "npm --no-git-tag-version --preid=beta version preminor",
-    "bump:major:beta": "npm --no-git-tag-version --preid=beta version premajor",
-    "bump:prerelease:beta": "npm --no-git-tag-version --preid=beta version prerelease",
-    "release": "npm publish",
-    "release:beta": "npm publish --tag beta"
+    "install": "echo"
   },
   "license": "MIT",
   "keywords": [
